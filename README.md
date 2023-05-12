@@ -2,6 +2,10 @@
 
 PHP client for the Hubspot API v3
 
+[![Latest Packagist Version](https://img.shields.io/packagist/v/coderjerk/hubsnot?logo=github&logoColor=white&style=flat-square)](https://packagist.org/packages/hubspot/api-client)  [![Total Downloads](https://img.shields.io/packagist/dt/coderjerk/hubsnot.svg?logo=github&logoColor=white&style=flat-square)](https://packagist.org/packages/hubspot/api-client)
+
+
+
 ###
 A very simple client because their own one looks unfinished and isn't really usable.
 
