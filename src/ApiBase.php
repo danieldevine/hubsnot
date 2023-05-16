@@ -26,7 +26,7 @@ class ApiBase
      * @return object
      * @throws GuzzleException
      */
-    protected function get(array $credentials, ...$options): object
+    protected function get(array $credentials, ...$options): object | null
     {
         return $this->go($credentials, 'GET', $options);
     }
@@ -37,7 +37,7 @@ class ApiBase
      * @return object
      * @throws GuzzleException
      */
-    protected function post($credentials, ...$options): object
+    protected function post($credentials, ...$options): object | null
     {
         return $this->go($credentials, 'POST', $options);
     }
@@ -48,7 +48,7 @@ class ApiBase
      * @return object
      * @throws GuzzleException
      */
-    protected function put($credentials, ...$options): object
+    protected function put($credentials, ...$options): object | null
     {
         return $this->go($credentials, 'PUT', $options);
     }
@@ -59,7 +59,7 @@ class ApiBase
      * @return object
      * @throws GuzzleException
      */
-    protected function delete($credentials, ...$options): object
+    protected function delete($credentials, ...$options): object | null
     {
         return $this->go($credentials, 'DELETE', $options);
     }
