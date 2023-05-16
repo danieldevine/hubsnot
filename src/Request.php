@@ -30,7 +30,6 @@ class Request
      * @param array|null $params
      * @param array|null $data
      * @param string|null $api_version
-     * @return object
      * @throws GuzzleException
      */
     public function authorisedRequest(
@@ -40,7 +39,7 @@ class Request
         ?array $params,
         ?array $data = null,
         ?string $api_version = 'v3'
-    ): object {
+    ) {
 
         $args = [
             'http_method' => $http_method,
@@ -51,10 +50,12 @@ class Request
             'api_version' => $api_version
         ];
 
-        if (isset($this->credentials['hubspot_access_token'])) {
-            $token = $this->credentials['hubspot_access_token'];
-            return $this->bearerTokenRequest($args, $token);
+        if (!isset($this->credentials['hubspot_access_token'])) {
+            return;
         }
+
+        $token = $this->credentials['hubspot_access_token'];
+        return $this->bearerTokenRequest($args, $token);
     }
 
     /**
