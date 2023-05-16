@@ -14,7 +14,7 @@ class ApiBase
      * @return object
      * @throws GuzzleException
      */
-    private function go(array $credentials, string $http_method, $options): object
+    private function go(array $credentials, string $http_method, $options): object | null
     {
         $request = new Request($credentials);
         return $request->authorisedRequest($http_method, ...$options);
