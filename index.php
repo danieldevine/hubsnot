@@ -10,11 +10,13 @@ $credentials = [
     'hubspot_access_token' => $_ENV['HUBSPOT_ACCESS_TOKEN']
 ];
 
+$params = [
+    'limit' => 200,
+];
+
 $hubsnot = new Hubsnot($credentials);
 
-$forms = $hubsnot->forms()->getForms();
-
-// dd($forms);
+$forms = $hubsnot->forms()->getForms($params);
 
 foreach ($forms->results as $form) {
     echo nl2br($form->name . "\r\n");

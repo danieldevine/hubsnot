@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class ApiBase
 {
+
     /**
      * @param array $credentials
      * @param string $http_method

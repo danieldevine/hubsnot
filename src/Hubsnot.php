@@ -13,7 +13,7 @@ class Hubsnot
      */
     protected array $credentials;
 
-    public function __construct($credentials)
+    public function __construct(array $credentials)
     {
         $this->credentials = $credentials;
     }

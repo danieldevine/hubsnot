@@ -11,7 +11,7 @@ class Forms extends ApiBase
 
     protected string $section = 'marketing';
 
-    public $params = [];
+    public array $credentials;
 
 
     public function __construct(array $credentials)
@@ -24,13 +24,13 @@ class Forms extends ApiBase
      *
      * @return object
      */
-    public function getForms()
+    public function getForms(?array $params = null): object
     {
         return $this->get(
             $this->credentials,
             $this->endpoint,
             $this->section,
-            $this->params
+            $params
         );
     }
 }
