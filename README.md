@@ -20,9 +20,11 @@ $credentials = [
 
 $hubsnot = new Hubsnot($credentials);
 
-$forms = $hubsnot->forms()->getForms();
+$params = [
+    'limit' => 200,
+];
 
-// dd($forms);
+$forms = $hubsnot->forms()->getForms($params);
 
 foreach ($forms->results as $form) {
     echo nl2br($form->name . "\r\n");
