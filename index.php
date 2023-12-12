@@ -18,7 +18,20 @@ $hubsnot = new Hubsnot($credentials);
 
 $forms = $hubsnot->forms()->getForms($params);
 
+// Comparison function
+function compareDates($a, $b)
+{
+    return strtotime($b->createdAt) <=> strtotime($a->createdAt);
+}
+
+usort($forms->results, 'compareDates');
+
+dd($forms->results);
+
 foreach ($forms->results as $form) {
+
+    dd($form);
+
     echo nl2br($form->name . "\r\n");
     echo nl2br($form->id . "\r\n");
 }
