@@ -24,7 +24,7 @@ class Forms extends ApiBase
      *
      * @return object
      */
-    public function getForms(?array $params = null): object
+    public function getForms(?array $params = null)
     {
         return $this->get(
             $this->credentials,
